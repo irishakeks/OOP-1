@@ -66,7 +66,7 @@ class Language:
             print("Verify that the input is correct.")
 
     def how_year(self):
-        return datetime.datetime.now().year - self.year
+        return datetime.datetime.now().year - int(self.year)
 
 
 class OOPlang(Language):
@@ -78,7 +78,8 @@ class OOPlang(Language):
         lang_list.Add(self)
 
     def output_lang(self, output_stream):  # Вывод значений полей
-        output_stream.write(": OOP language: inheritance = " + self.inher + ", year = " + self.year + ", how old: " + self.how_year() + "\n")
+        output_stream.write(": OOP language" + "\n" + "inheritance = " + self.inher + ", year = " +
+                            self.year.strip() + ", how old: " + str(self.how_year()) + "\n")
 
 
 class ProcLang(Language):
@@ -90,4 +91,5 @@ class ProcLang(Language):
         lang_list.Add(self)
 
     def output_lang(self, output_stream):
-        output_stream.write(": Procedure language: abstract = " + self.abstract + ", year = " + self.year + ", how old: " + self.how_year() + "\n")
+        output_stream.write(": Procedure language" + "\n" + "abstract = " + self.abstract + ", year = " +
+                            self.year.strip() + ", how old: " + str(self.how_year()) + "\n")
