@@ -1,6 +1,7 @@
 from ListLib import List
 import abc
 import os
+import datetime
 
 
 class Container:
@@ -61,11 +62,11 @@ class Language:
         elif int(lang_type) == 2:  # процедурный
             tmp_Proc = ProcLang()
             tmp_Proc.input_langs(lang_params, lang_list)
-        elif int(lang_type) == 3:  # функциональный
-            tmp_Func = FuncLang()
-            tmp_Func.input_langs(lang_params, lang_list)
         else:
             print("Verify that the input is correct.")
+
+    def how_year(self):
+        return datetime.datetime.now().year - self.year
 
 
 class OOPlang(Language):
@@ -77,7 +78,7 @@ class OOPlang(Language):
         lang_list.Add(self)
 
     def output_lang(self, output_stream):  # Вывод значений полей
-        output_stream.write(": OOP language: inheritance = " + self.inher + ", year = " + self.year + "\n")
+        output_stream.write(": OOP language: inheritance = " + self.inher + ", year = " + self.year + ", how old: " + self.how_year() + "\n")
 
 
 class ProcLang(Language):
@@ -89,16 +90,4 @@ class ProcLang(Language):
         lang_list.Add(self)
 
     def output_lang(self, output_stream):
-        output_stream.write(": Procedure language: abstract = " + self.abstract + ", year = " + self.year + "\n")
-
-
-class FuncLang(Language):
-    def __init__(self):
-        super().__init__()
-
-    def input_langs(self, line, lang_list):
-        self.type, self.lazy, self.year = line
-        lang_list.Add(self)
-
-    def output_lang(self, output_stream):
-        output_stream.write(": Procedure language: abstract = " + self.type + ", lazy computing support = " + self.lazy + ", year = " + self.year + "\n")
+        output_stream.write(": Procedure language: abstract = " + self.abstract + ", year = " + self.year + ", how old: " + self.how_year() + "\n")
