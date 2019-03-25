@@ -11,8 +11,8 @@ class Main:
         output_name = sys.argv[2]
 
         c = Container()
-        if c.input_lang(input_name):
-            if c.output_lang(output_name):
+        if c.input_lang(input_name) != 0:
+            if c.output_lang(output_name) != 0:
                 c.clear_list(output_name)
 
 
