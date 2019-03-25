@@ -35,6 +35,12 @@ class List:
             new_link.prev = last
             new_link.next = self.head
 
+    def Sort(self):
+
+        for i in range(self.length):
+            for j in range(1, self.length - i - 1):
+                if self.GetByID(i). > self.GetByID(j):
+
+
     def clear(self):
         self.__init__()
-
