@@ -61,9 +61,11 @@ class Language:
         elif int(lang_type) == 2:  # процедурный
             tmp_Proc = ProcLang()
             tmp_Proc.input_langs(lang_params, lang_list)
+        elif int(lang_type) == 3:  # функциональный
+            tmp_Func = FuncLang()
+            tmp_Func.input_langs(lang_params, lang_list)
         else:
             print("Verify that the input is correct.")
-
 
 
 class OOPlang(Language):
@@ -88,3 +90,15 @@ class ProcLang(Language):
 
     def output_lang(self, output_stream):
         output_stream.write(": Procedure language: abstract = " + self.abstract + ", year = " + self.year + "\n")
+
+
+class FuncLang(Language):
+    def __init__(self):
+        super().__init__()
+
+    def input_langs(self, line, lang_list):
+        self.type, self.lazy, self.year = line
+        lang_list.Add(self)
+
+    def output_lang(self, output_stream):
+        output_stream.write(": Procedure language: abstract = " + self.type + ", lazy computing support = " + self.lazy + ", year = " + self.year + "\n")
