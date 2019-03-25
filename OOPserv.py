@@ -77,7 +77,8 @@ class OOPlang(Language):
         lang_list.Add(self)
 
     def output_lang(self, output_stream):  # Вывод значений полей
-        output_stream.write(": OOP language: inheritance = " + self.inher + ", year = " + self.year + "\n")
+        output_stream.write(": OOP language" + "\n" +
+                            "inheritance = " + self.inher + ", year = " + self.year + "\n")
 
 
 class ProcLang(Language):
@@ -89,7 +90,8 @@ class ProcLang(Language):
         lang_list.Add(self)
 
     def output_lang(self, output_stream):
-        output_stream.write(": Procedure language: abstract = " + self.abstract + ", year = " + self.year + "\n")
+        output_stream.write(": Procedure language" + "\n" +
+                            "abstract = " + self.abstract + ", year = " + self.year + "\n")
 
 
 class FuncLang(Language):
@@ -101,4 +103,6 @@ class FuncLang(Language):
         lang_list.Add(self)
 
     def output_lang(self, output_stream):
-        output_stream.write(": Procedure language: abstract = " + self.type + ", lazy computing support = " + self.lazy + ", year = " + self.year + "\n")
+        output_stream.write(": Functional language" + "\n" +
+                            "typification = " + self.type + ", lazy computing support = " + self.lazy +
+                            ", year = " + self.year + "\n")

@@ -1,8 +1,11 @@
 Number of elements = 3 
-1: OOP language: inheritance = multiply, year = 1998
+1: OOP language
+inheritance = multiply, year = 1998
 
-2: Procedure language: abstract = no, year = 1997
+2: Procedure language
+abstract = no, year = 1997
 
-3: OOP language: inheritance = single, year = 1990
+3: Functional language
+typification = strong, lazy computing support = no, year = 1990
 
 List empty. Number of elements = 0 
