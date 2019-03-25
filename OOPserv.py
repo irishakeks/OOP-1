@@ -49,6 +49,7 @@ class Language:
 
     def __init__(self):
         self.year = 0  # общее поле - год разработки
+        self.mentions = 0  # общее поле - упоминания
 
     @abc.abstractmethod  # определим метод позже
     def output_lang(self, output_stream):
@@ -71,12 +72,13 @@ class OOPlang(Language):
         super().__init__()
 
     def input_langs(self, line, lang_list):
-        self.inher, self.year = line
+        self.inher, self.mentions, self.year = line
         lang_list.Add(self)
 
     def output_lang(self, output_stream):  # Вывод значений полей
         output_stream.write(": OOP language" + "\n" +
-                            "inheritance = " + self.inher + ", year = " + self.year + "\n")
+                            "inheritance = " + self.inher + ", number of mentions = " + self.mentions +
+                            ", year = " + self.year + "\n")
 
 
 class ProcLang(Language):
@@ -84,9 +86,10 @@ class ProcLang(Language):
         super().__init__()
 
     def input_langs(self, line, lang_list):
-        self.abstract, self.year = line
+        self.abstract, self.mentions, self.year = line
         lang_list.Add(self)
 
     def output_lang(self, output_stream):
         output_stream.write(": Procedure language" + "\n" +
-                            "abstract = " + self.abstract + ", year = " + self.year + "\n")
+                            "abstract = " + self.abstract + ", number of mentions = " + self.mentions +
+                            ", year = " + self.year + "\n")

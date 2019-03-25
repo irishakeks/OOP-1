@@ -1,11 +1,11 @@
 Number of elements = 3 
 1: OOP language
-inheritance = multiply, year = 1998
+inheritance = multiply, number of mentions = 10970, year = 1998
 
 2: Procedure language
-abstract = no, year = 1997
+abstract = no, number of mentions = 12010, year = 1997
 
 3: OOP language
-inheritance = single, year = 1990
+inheritance = single, number of mentions = 12341, year = 1990
 
 List empty. Number of elements = 0 
