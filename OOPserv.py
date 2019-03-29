@@ -33,7 +33,7 @@ class Container:
 
             for i in range(self.lang_list.length):
                 lang = self.lang_list.GetByID(i).value
-                output_file.write(str(i + 1))
+                #output_file.write(str(i + 1))
                 lang.output_lang(output_file)
             return 1
         else:
@@ -78,9 +78,9 @@ class OOPlang(Language):
         self.inher, self.year = line
         lang_list.Add(self)
 
-    def output_lang(self, output_stream):  # Вывод значений полей
-        output_stream.write(": OOP language" + "\n" + "inheritance = " + self.inher + ", year = " +
-                            self.year.strip() + ", how old: " + str(self.how_year()) + "\n")
+    #def output_lang(self, output_stream):  # Вывод значений полей
+        #output_stream.write(": OOP language" + "\n" + "inheritance = " + self.inher + ", year = " +
+                            #self.year.strip() + ", how old: " + str(self.how_year()) + "\n")
 
 
 class ProcLang(Language):
