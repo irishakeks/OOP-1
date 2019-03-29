@@ -4,3 +4,5 @@ multiply 1998
 no 1997
 1
 single 1990
+2
+yes 1997
