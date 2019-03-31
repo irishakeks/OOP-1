@@ -4,3 +4,5 @@ multiply 1998
 no 1997
 3
 strong no 1990
+3
+false yes 1999
