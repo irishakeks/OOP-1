@@ -1,9 +1,13 @@
-Number of elements = 3 
+Number of elements = 5 
 1: OOP language
-inheritance = multiply, year = 1997, how old: 22
+inheritance = multiply, year = 1998, how old: 21
 2: Procedure language
-abstract = no, year = 1995, how old: 24
+abstract = no, year = 1997, how old: 22
 3: OOP language
 inheritance = single, year = 1990, how old: 29
+4: Procedure language
+abstract = yes, year = 1997, how old: 22
+5: Procedure language
+abstract = yes, year = 1998, how old: 21
 
 List empty. Number of elements = 0 

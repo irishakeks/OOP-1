@@ -1,6 +1,10 @@
 1
-multiply 1997
+multiply 1998
 2
-no 1995
+no 1997
 1
 single 1990
+2
+yes 1997
+2
+yes 1998
