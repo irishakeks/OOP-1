@@ -1,6 +1,12 @@
-from ListLib import Node
 import abc
 import os
+
+
+class Node:
+    def __init__(self, value, next, prev):
+        self.value = value
+        self.next = next
+        self.prev = prev
 
 
 class Container:
@@ -32,7 +38,7 @@ class Container:
             new_link.prev = last
             new_link.next = self.head
 
-    def input_lang(self, input_name):
+    def Input(self, input_name):
         try:
             file = open(input_name)
 
@@ -46,9 +52,9 @@ class Container:
 
         lang = Language()
         for line in file:
-            lang.input_lang(self, line, file.readline().split(" "))
+            lang.Input_Lang(self, line, file.readline().split(" "))
 
-    def output_lang(self, file_name):
+    def Output(self, file_name):
 
         output_file = open(file_name, 'w')
         if self.length > 0:
@@ -56,14 +62,14 @@ class Container:
             current = self.head
             for i in range(self.length):
                 output_file.write(str(i + 1))
-                current.value.output_lang(output_file)
+                current.value.Output_Lang(output_file)
                 current = current.next
             return 1
         else:
             output_file.write("No elements! \n")
             return 0
 
-    def clear_list(self, file_name):
+    def Clear(self, file_name):
         self.__init__()
         output_file = open(file_name, 'a')
         output_file.write("\nList empty. Number of elements = " + str(self.length) + " \n")
@@ -76,16 +82,16 @@ class Language:
         self.year = 0  # общее поле - год разработки
 
     @abc.abstractmethod  # определим метод позже
-    def output_lang(self, output_stream):
+    def Output_Lang(self, output_stream):
         pass
 
-    def input_lang(self, lang_list, lang_type, lang_params):
+    def Input_Lang(self, lang_list, lang_type, lang_params):
         if int(lang_type) == 1:  # ООП
             tmp_OOP = OOPlang()
-            tmp_OOP.input_langs(lang_params, lang_list)
+            tmp_OOP.Input_Langs(lang_params, lang_list)
         elif int(lang_type) == 2:  # процедурный
             tmp_Proc = ProcLang()
-            tmp_Proc.input_langs(lang_params, lang_list)
+            tmp_Proc.Input_Langs(lang_params, lang_list)
         else:
             print("Verify that the input is correct.")
 
@@ -94,11 +100,11 @@ class OOPlang(Language):
     def __init__(self):
         super().__init__()
 
-    def input_langs(self, line, lang_list):
+    def Input_Langs(self, line, lang_list):
         self.inher, self.year = line
         lang_list.Add(self)
 
-    def output_lang(self, output_stream):  # Вывод значений полей
+    def Output_Lang(self, output_stream):  # Вывод значений полей
         output_stream.write(": OOP language" + "\n" +
                             "inheritance = " + self.inher + ", year = " + self.year + "\n")
 
@@ -107,10 +113,10 @@ class ProcLang(Language):
     def __init__(self):
         super().__init__()
 
-    def input_langs(self, line, lang_list):
+    def Input_Langs(self, line, lang_list):
         self.abstract, self.year = line
         lang_list.Add(self)
 
-    def output_lang(self, output_stream):
+    def Output_Lang(self, output_stream):
         output_stream.write(": Procedure language" + "\n" +
                             "abstract = " + self.abstract + ", year = " + self.year + "\n")
