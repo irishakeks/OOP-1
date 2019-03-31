@@ -10,5 +10,3 @@ yes 1995
 no 1996
 1
 single 1997
-1
-multiply 1998

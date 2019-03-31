@@ -1,9 +1,18 @@
-Number of elements = 7 
-: Procedure language
-abstract = no, year = 1996, how old: 23
-: Procedure language
-abstract = yes, year = 1995, how old: 24
-: Procedure language
-abstract = no, year = 1993, how old: 26
+Number of elements = 6 
+1: 
+
+2: Procedure language
+abstract = no, year = 1993
+
+3: 
+
+4: Procedure language
+abstract = yes, year = 1995
+
+5: Procedure language
+abstract = no, year = 1996
+
+6: 
+
 
 List empty. Number of elements = 0 
