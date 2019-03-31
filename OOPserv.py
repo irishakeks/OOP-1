@@ -15,7 +15,7 @@ class Container:
         self.length = 0
 
     def GetByID(self, key):
-        if self.head != None:
+        if self.head is not None:
             current = self.head
             for k in range(key):
                 if self.head != current.next:
